@@ -28,7 +28,7 @@ func (p *tcpServer) Handle(conn net.Conn) {
 		prot = &ProtocolV1{p.ctx}
 		fmt.Println("use protocol magic V1")
 		if err != nil {
-
+			fmt.Errorf("failed when get protocol magic:%s\n", err)
 		}
 	default:
 		fmt.Errorf("unknown protocol version:%s\n ", protocolMagic)
